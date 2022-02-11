@@ -345,14 +345,11 @@
 		99379424278CC8B00096F99F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				99379432278CCA3E0096F99F /* TodayViewController.swift */,
-				99379436278CCA8B0096F99F /* NewRoutineViewController.swift */,
-				99379438278CCAD90096F99F /* NewProductRoutineViewController.swift */,
-				9937943A278CCB010096F99F /* YourRoutineViewController.swift */,
-				9937943C278CCB2D0096F99F /* SettingsViewController.swift */,
-				99379434278CCA630096F99F /* TodayViewControllerDelegate.swift */,
-				9937943E278CCB6E0096F99F /* YourRoutineViewControllerDelegate.swift */,
-				99379440278CCB8E0096F99F /* NewRoutineViewControllerDelegate.swift */,
+				A0D5432327B6D4020057BA1B /* Today */,
+				A0D5432427B6D4810057BA1B /* New Routine */,
+				A0D5432527B6D48E0057BA1B /* New Product */,
+				A0D5432627B6D49A0057BA1B /* Your Routine */,
+				A0D5432727B6D4A80057BA1B /* Settings */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -523,6 +520,49 @@
 				A036433127A1B4FC002606DC /* ExploreCollectionViewDataSource.swift */,
 			);
 			path = Explore;
+			sourceTree = "<group>";
+		};
+		A0D5432327B6D4020057BA1B /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				99379432278CCA3E0096F99F /* TodayViewController.swift */,
+				99379434278CCA630096F99F /* TodayViewControllerDelegate.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		A0D5432427B6D4810057BA1B /* New Routine */ = {
+			isa = PBXGroup;
+			children = (
+				99379436278CCA8B0096F99F /* NewRoutineViewController.swift */,
+				99379440278CCB8E0096F99F /* NewRoutineViewControllerDelegate.swift */,
+			);
+			path = "New Routine";
+			sourceTree = "<group>";
+		};
+		A0D5432527B6D48E0057BA1B /* New Product */ = {
+			isa = PBXGroup;
+			children = (
+				99379438278CCAD90096F99F /* NewProductRoutineViewController.swift */,
+			);
+			path = "New Product";
+			sourceTree = "<group>";
+		};
+		A0D5432627B6D49A0057BA1B /* Your Routine */ = {
+			isa = PBXGroup;
+			children = (
+				9937943E278CCB6E0096F99F /* YourRoutineViewControllerDelegate.swift */,
+				9937943A278CCB010096F99F /* YourRoutineViewController.swift */,
+			);
+			path = "Your Routine";
+			sourceTree = "<group>";
+		};
+		A0D5432727B6D4A80057BA1B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9937943C278CCB2D0096F99F /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
