@@ -24,7 +24,8 @@ class TodayViewController: UIViewController, NewRoutineViewControllerDelegate {
     var dataSelecionada: Date?
     var rotinasData: [Routine] = []
     weak var NewRoutineViewControllerDelegate: NewRoutineViewControllerDelegate?
-    
+    private lazy var dataSource = TodayCollectionViewDataSource()
+
     //    var newRoutineViewController = NewRoutineViewController()
     //    var yourRoutineViewController = YourRoutineViewController()
     
@@ -51,7 +52,7 @@ class TodayViewController: UIViewController, NewRoutineViewControllerDelegate {
         navigationController?.setNavigationBarHidden(true, animated: false)
         //collectionView
         self.routineCollectionView.delegate = self
-        self.routineCollectionView.dataSource = self
+        self.routineCollectionView.dataSource = dataSource
         view.addSubview(fraseSemRotina)
         view.addSubview(imagemBoasVindas)
         
@@ -331,48 +332,20 @@ class TodayViewController: UIViewController, NewRoutineViewControllerDelegate {
     }
 }
 //Formatação da collectionView
-extension TodayViewController: UICollectionViewDelegate{
-    
-}
-
-extension TodayViewController: UICollectionViewDataSource{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.rotinasData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = routineCollectionView.dequeueReusableCell(withReuseIdentifier: "rotine", for: indexPath) as! RoutineCollectionViewCell
-        cell.nameRoutine.text = self.rotinasData[indexPath.row].routineName
-        // guard let cell = routineCollectionView.dequeueReusableCell(withReuseIdentifier: "rotine", for: indexPath) as? RoutineCollectionViewCell else {return UICollectionViewCell()}
-        cell.morningCircularProgress.image = UIImage(named: "dia")
-        cell.afternoonCircularProgress.image = UIImage(named: "tarde")
-        cell.nightCircularProgress.image = UIImage(named: "lua")
-
-        
-//        let soma = (oi?[indexPath.row].somaManha)!/10 //total de itens
-//        let yourSoma = (oi?[indexPath.row].yourSomaManha)!/10 //total de itens selecionados
-//        let isSalvo = oi?[indexPath.row].salvo
-//        let result = Float(yourSoma/soma)
-
-        return cell
-    }
+extension TodayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "YourRoutineView") as! YourRoutineViewController
         YourRoutineViewController.index = indexPath.row
         vc.NewRoutineViewControllerDelegate = self
         vc.routine = oi?[indexPath.row] ?? Routine()
-        
-        
-        
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 360, height: 170)
-    }
+
 }
-extension TodayViewController: TodayViewControllerDelegate{
+
+extension TodayViewController: TodayViewControllerDelegate {
     func didRegister() {
         self.rotinasData = try! CoreDataStackRoutine.getRoutine()
         routineCollectionView.reloadData()

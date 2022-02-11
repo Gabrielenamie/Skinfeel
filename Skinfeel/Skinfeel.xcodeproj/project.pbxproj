@@ -86,6 +86,7 @@
 		A0B98F7A27B1928000541A41 /* pelenegra.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B98F7C27B1928000541A41 /* pelenegra.json */; };
 		A0B98F7E27B1928700541A41 /* coreana.json in Resources */ = {isa = PBXBuildFile; fileRef = A0B98F8027B1928700541A41 /* coreana.json */; };
 		A0B98F8327B194BF00541A41 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B98F8227B194BF00541A41 /* Localizable.swift */; };
+		A0D5433127B6F46F0057BA1B /* TodayCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D5433027B6F46F0057BA1B /* TodayCollectionViewDataSource.swift */; };
 		A0E7647727AB35B400A90486 /* FeedAppClips.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7647627AB35B400A90486 /* FeedAppClips.swift */; };
 /* End PBXBuildFile section */
 
@@ -220,6 +221,7 @@
 		A0B98F8127B1928A00541A41 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "pt-BR"; path = "pt-BR.lproj/coreana.json"; sourceTree = "<group>"; };
 		A0B98F8227B194BF00541A41 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		A0B98F8427B1988500541A41 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A0D5433027B6F46F0057BA1B /* TodayCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		A0E7647627AB35B400A90486 /* FeedAppClips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAppClips.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -527,6 +529,7 @@
 			children = (
 				99379432278CCA3E0096F99F /* TodayViewController.swift */,
 				99379434278CCA630096F99F /* TodayViewControllerDelegate.swift */,
+				A0D5433027B6F46F0057BA1B /* TodayCollectionViewDataSource.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				99379445278CCBEB0096F99F /* NewProductShelfViewController.swift in Sources */,
 				9937941C278CC7BF0096F99F /* NotificationManager.swift in Sources */,
 				9924050D2771139200CF0946 /* AppDelegate.swift in Sources */,
+				A0D5433127B6F46F0057BA1B /* TodayCollectionViewDataSource.swift in Sources */,
 				99379427278CC9060096F99F /* OnboardingViewController.swift in Sources */,
 				A03642F8279B673F002606DC /* SuggestedCollectionViewCell.swift in Sources */,
 				9937940D278CC5110096F99F /* SceneDelegate.swift in Sources */,
